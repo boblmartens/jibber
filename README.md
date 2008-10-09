@@ -10,9 +10,9 @@ _Jibber_, quite simply, is an open source blogging engine written using the Ruby
 
 ### License 
 
-_Jibber_ is released under the MIT License, listed below.
+_Jibber_ is released under the MIT License, listed below:
 
-### The MIT License
+#### The MIT License
 
 Copyright (c) 2008 Bob Martens
 
