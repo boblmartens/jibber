@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  def test_truth
-    assert true
-  end
+	def test_should_create_post
+		p = Post.create(
+			:title => 'test post',
+			:body => 'test post body')
+		assert p.valid?
+	end
+
 end
