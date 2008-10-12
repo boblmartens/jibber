@@ -17,7 +17,7 @@ class PostsControllerTest < ActionController::TestCase
 
 	def test_should_show_new_form
 		get :new
-		assert_select 'form p', :count => 2
+		assert_select 'form p', :count => 3
 	end
 
 	def test_should_show_story
@@ -25,8 +25,8 @@ class PostsControllerTest < ActionController::TestCase
 			:title => 'test post',
 			:body => 'this is the test post body'}
 		assert ! assigns(:post).new_record?
-		assert_redirected_to post_path
-		assert_not_nil flash[:notice]
+		assert_redirected_to posts_path 
+		# assert_not_nil flash[:notice]
 	end
 
 end

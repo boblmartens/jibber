@@ -1,6 +1,6 @@
 <h2>Welcome to Jibber!</h2>
 <% @posts.each do  |post| %>
-	<h3><%= post.title %></h3>
+	<h3><%= link_to  post.title, post %></h3>
 	<p><%= post.body %></p>
 <% end %>
 
