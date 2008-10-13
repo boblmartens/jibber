@@ -29,4 +29,9 @@ class PostsControllerTest < ActionController::TestCase
 		# assert_not_nil flash[:notice]
 	end
 
+	def test_should_reject_missing_post_attribute
+		post :create, :post => { :title => 'test title' }
+		assert assigns(:post).errors.on(:body)
+	end
+
 end

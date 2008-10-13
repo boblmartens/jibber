@@ -2,6 +2,7 @@
 <% @posts.each do  |post| %>
 	<h3><%= link_to  post.title, post %></h3>
 	<p><%= post.body %></p>
+	<p><%= link_to 'edit post', edit_post_path(post) %></p>
 <% end %>
 
 <%= link_to 'create a new post', new_post_path %>
