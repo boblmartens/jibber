@@ -34,4 +34,27 @@ class PostsControllerTest < ActionController::TestCase
 		assert assigns(:post).errors.on(:body)
 	end
 
+	def test_should_show_edit_form
+		get :edit, :id => 1
+		assert_response :success
+		assert_template 'edit'
+		assert_select 'form p', 3
+	end
+
+	def test_should_edit_post
+		get :edit, :id => 1 
+
+		assert_response :success
+		assert_template 'edit'
+
+		assert_not_nil assigns(:post)
+		assert assigns(:post).valid?
+	end
+
+	def test_should_redirect_after_update
+		post :update, :id => 1
+		assert_response :redirect
+		assert_redirected_to :action => 'show', :id => 1
+	end
+
 end

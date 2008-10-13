@@ -22,11 +22,4 @@ class PostTest < ActiveSupport::TestCase
 		assert p.errors.on(:body)
 	end
 
-	def test_should_update_post_attributes
-		p = Post.find(:first)
-		p.title = 'new title'
-		p.update
-		assert p.title == 'new title'
-	end
-
 end
