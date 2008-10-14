@@ -27,4 +27,10 @@ class PostTest < ActiveSupport::TestCase
 		assert p.title, 'test title'
 	end
 
+	def test_should_delete_post
+		p = Post.find(:first)
+		p.destroy
+		assert p, nil
+	end
+
 end
