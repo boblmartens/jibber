@@ -22,4 +22,9 @@ class PostTest < ActiveSupport::TestCase
 		assert p.errors.on(:body)
 	end
 
+	def test_should_update_post_attributes
+		p = Post.update(1, :title => 'test title')
+		assert p.title, 'test title'
+	end
+
 end
