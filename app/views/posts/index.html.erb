@@ -1,9 +1,14 @@
 <h2>Welcome to Jibber!</h2>
-<% @posts.each do  |post| %>
-	<h3><%= link_to  post.title, post %></h3>
-	<p><%= markdown  post.body %></p>
-	<p><%= link_to 'edit post', edit_post_path(post) %></p>
-	<p><%= link_to 'delete post', post, :confirm => "Are you sure you want to delete this posts?", :method => "delete" %></p>
+
+<% if @posts = [] %>
+	<p>I'm sorry, you need to write a post.</p>
+<% else %>
+	<% @posts.each do  |post| %>
+		<h3><%= link_to  post.title, post %></h3>
+		<p><%= markdown  post.body %></p>
+		<p><%= link_to 'edit post', edit_post_path(post) %></p>
+		<p><%= link_to 'delete post', post, :confirm => "Are you sure you want to delete this posts?", :method => "delete" %></p>
+	<% end %>
 <% end %>
 
 <%= link_to 'create a new post', new_post_path %>
