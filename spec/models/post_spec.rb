@@ -25,4 +25,10 @@ describe Post do
 		p.update_attributes(:title => "test title")
 		p.title.should == "test title"
 	end
+
+	it "should delete record" do
+		p = Post.create(@valid_attributes)
+		p.destroy
+		p = Post.find(:all).should == []
+	end
 end
