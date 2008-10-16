@@ -16,6 +16,10 @@ describe Post do
 		Post.new(:body => "body test").should_not be_valid
 	end
 
+	it "should not save instance if given only title" do
+		Post.new(:title => "title test").should_not be_valid
+	end
+
 	it "should update attributes after edit" do
 		p = Post.create(@valid_attributes)
 		p.update_attributes(:title => "test title")
