@@ -8,14 +8,12 @@ Feature: Working with comments
     When I fill in "Body" with "My comment body"
     	And I press "Post Comment"
     Then I should see "My comment body"
-    	And it should be on the post page
 
   Scenario: Editing a posted comment
     Given I am the original poster of the comment
 			And I am on the post page
 			And the comment is visible
-			And I click the "Edit" link
-    When I change the "Body" area with "My new comment body"
+			And I press "Edit Comment"
+    When I fill in "Body" with "My new comment body"
 			And I press "Save Changes"
-    Then there should see "My new comment body"
-			And it should be on the post page
+    Then I should see "My new comment body"
