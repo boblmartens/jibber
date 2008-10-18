@@ -1,8 +1,8 @@
 Feature: Working with comments
   In order to post a comment to a post
   A user
-  Should be able to post a comment
-  
+	So that a discussion can happen
+
   Scenario: Posting new comment
     Given I am on a post page
     When I fill in "Body" with "My comment body"
