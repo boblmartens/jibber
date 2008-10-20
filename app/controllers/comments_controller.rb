@@ -19,12 +19,12 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @post.comments.build
+    @comment = @post.comments.build(params[:comment])
 
     respond_to do |format|
       if @comment.save
         flash[:notice] = 'Comment was successfully created.'
-        format.html { redirect_to([@post, @comment]) }
+        format.html { redirect_to(post_path(@post)) }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
         format.html { render :action => "new" }

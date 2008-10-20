@@ -8,15 +8,15 @@
 
 <% for comment in @comments %>
   <tr>
-    <td><%=h comment.post %></td>
+    <td><%=h comment.post_id %></td>
     <td><%=h comment.body %></td>
-    <td><%= link_to 'Show', comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', [@post, comment] %></td>
+    <td><%= link_to 'Edit', [:edit, @post, comment] %></td>
+    <td><%= link_to 'Destroy', [@post, comment], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New comment', new_comment_path %>
+<%= link_to 'New comment', new_post_comment_path(@post) %>
