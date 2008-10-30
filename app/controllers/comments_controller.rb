@@ -49,11 +49,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = @post.comments.find
+    @comment = @post.comments.find(params[:id])
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to(post_url) }
+      format.html { redirect_to(@post) }
       format.xml  { head :ok }
     end
   end
