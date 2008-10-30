@@ -1,13 +1,13 @@
 <h2><%= @post.title %></h2>
 
-<p><%= markdown @post.body %></p>
+<%= markdown @post.body %>
 
 <%= error_messages_for :comment %>
 
 <% unless @post.comments.empty? %>
 	<h3>Comments (<%= @post.comments.size %>)</h3>
 	<% @post.comments.each do |comment| %>
-	<p><%= markdown comment.body %></p>
+	<%= markdown comment.body %>
 	<% end %>
 <% end %>
 
