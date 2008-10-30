@@ -1,6 +1,6 @@
 <% form_for([@post, @comment]) do |f| %>
 	<p>
-		<b>Body</b><br />
+		<b>Comment Body | <%= link_to "Markdown formatting  supported", "http://en.wikipedia.org/wiki/Markdown" %></b><br />
 		<%= f.text_area :body %>
 	</p>
 
