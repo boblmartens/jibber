@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = @post.comments.find
+    @comment = @post.comments.find(params[:id])
   end
 
   def create
@@ -34,12 +34,12 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment = @post.comments.find
+    @comment = @post.comments.find(params[:id])
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
         flash[:notice] = 'Comment was successfully updated.'
-        format.html { redirect_to([@post, @comment]) }
+        format.html { redirect_to([@post]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

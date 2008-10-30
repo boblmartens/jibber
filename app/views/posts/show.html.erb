@@ -8,6 +8,7 @@
 	<h3>Comments (<%= @post.comments.size %>)</h3>
 	<% @post.comments.each do |comment| %>
 	<%= markdown comment.body %>
+	<%= link_to 'edit comment', edit_post_comment_path(@post, comment) %>
 	<% end %>
 <% end %>
 
