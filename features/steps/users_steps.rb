@@ -1,3 +1,7 @@
+Given /I am on the registration page/ do
+	visits "/users/new"
+end
+
 Given /I am on the new users page/ do
   visits "/users/new"
 end

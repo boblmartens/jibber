@@ -9,4 +9,4 @@ Feature: Simple user control
 		And I fill in "password" with "testing"
 		And I fill in "name" with "testy"
 		And I press "register me"
-		Then I should see "registration successful"
+		Then I should see "test@test.org"
