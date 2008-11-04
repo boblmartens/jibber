@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :users
+
   map.resources :comments
 
 	map.root :controller => 'posts', :action => 'index' 
