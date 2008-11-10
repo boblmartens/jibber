@@ -6,6 +6,18 @@ Given /I am on the new users page/ do
   visits "/users/new"
 end
 
+Given /a user "testy"/ do
+	a = User.new
+	a.email = "test@test.com"
+	a.password = "test"
+	a.name = "testy"
+	a.save
+end
+
+Given /I am on the members page/ do
+	visits "/users"
+end
+
 Given /there are (\d+) users/ do |n|
   Users.transaction do
     Users.destroy_all
