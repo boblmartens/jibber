@@ -18,3 +18,9 @@ Feature: Simple user control
 		And I fill in "email" with "new@new.com"
 		And I press "update"
 		Then I should see "new@new.com"
+
+  Scenario: Delete user
+    Given a user "testy"
+    And I am on the members page
+    When I follow "Destroy"
+    Then I should not see "testy"
