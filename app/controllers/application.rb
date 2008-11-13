@@ -1,7 +1,5 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
+  before_filter :fetch_logged_in_user
   # helper :all # include all helpers, all the time
 
   # See ActionController::RequestForgeryProtection for details
@@ -12,4 +10,10 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
+  protected
+
+    def fetch_logged_in_user
+      return unless session[:user_id]
+      @current_user = User.find_by_id(session[:user_id])
+    end
 end
