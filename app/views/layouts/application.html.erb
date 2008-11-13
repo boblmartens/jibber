@@ -10,7 +10,16 @@
 
 	<body>
 		<div id="pageWrapper">
-      <p>Welcome back <%= @current_user.name %></p>
+
+    <div id="loginLogout">
+      <% if @current_user %>
+        Welcome back, <%= @current_user.name %>
+        <em><%= link_to "(Logout)", session_path, :method => :delete %></em>
+      <% else %>
+        <em><%= link_to "Login Now", new_session_path %></em>
+      <% end %>
+    </div>
+
 			<h1>The Jibber Blogging Engine</h1>
 			<%= yield %>
 		</div>
