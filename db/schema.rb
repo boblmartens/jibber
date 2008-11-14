@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081104055310) do
+ActiveRecord::Schema.define(:version => 20081114033350) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -27,10 +27,11 @@ ActiveRecord::Schema.define(:version => 20081104055310) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "password"
+    t.string   "password_salt"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_hash"
   end
 
 end
