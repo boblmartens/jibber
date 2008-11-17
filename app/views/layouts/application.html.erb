@@ -16,11 +16,11 @@
         Welcome back, <%= @current_user.name %>
         <em><%= link_to "(Logout)", session_path, :method => :delete %></em>
       <% else %>
-        <em><%= link_to "Login Now", new_session_path %></em>
+        <em><%= link_to "Login Now", new_session_path %> or <%= link_to "Register?", new_user_path %></em>
       <% end %>
     </div>
 
-			<h1>The Jibber Blogging Engine</h1>
+			<h1><%= link_to "The Jibber Blogging Engine", root_path %></h1>
 			<%= yield %>
 		</div>
 	</body>
