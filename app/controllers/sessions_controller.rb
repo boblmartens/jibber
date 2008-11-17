@@ -5,12 +5,17 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # @current_user = User.find_by_email_and_password_hash(params[:email], params[:password])
     user = User.find_by_email(params[:email])
 
     if user.password_hash == Digest::SHA256.hexdigest(params[:password] + user.password_salt)
       session[:user_id] = user.id
-      redirect_to posts_path
+      
+      if session[:return_to]
+        redirect_to session[:return_to]
+        session[:return_to] = nil
+      else
+        redirect_to posts_path
+      end
     else
       render :action => 'new'
     end
