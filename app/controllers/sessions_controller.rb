@@ -5,8 +5,10 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # find the User by the provided email and store it in the local variable
     user = User.find_by_email(params[:email])
 
+    # checks the hash stored in the databse with the hash of the supplied password and stored salt
     if user.password_hash == Digest::SHA256.hexdigest(params[:password] + user.password_salt)
       session[:user_id] = user.id
       
