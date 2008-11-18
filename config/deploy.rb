@@ -25,6 +25,6 @@ namespace :deploy do
 
   [:start, :stop].each do |t|
     desc "#{t} task is a no-op with mod_rails"
-    task t, :roles => :app, do ; end
+    task t, :roles => :app do ; end
   end
 end
