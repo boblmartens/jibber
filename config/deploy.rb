@@ -28,3 +28,11 @@ namespace :deploy do
     task t, :roles => :app do ; end
   end
 end
+
+desc "Link to database"
+task :link_db do
+  run "ln -s /home/bob/db/production.sqlite3 /home/bob/public_html/jibber/current/db/production.sqlite3"
+end
+
+after "deploy", "link_db"
+after "deploy", "deploy:cleanup"
