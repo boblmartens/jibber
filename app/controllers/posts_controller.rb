@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_filter :login_required, :except => [ :index, :show ]
-  before_filter :creator => [ @post, Post ], :except => [ :index, :show, :new, :create, :destroy  ]
+  before_filter :post_creator, :only => [ :edit, :update ]
 
   def index
 		@posts = Post.find :all, :order => 'id DESC'
@@ -47,14 +47,14 @@ class PostsController < ApplicationController
 
   protected
 
-#  def post_owner?
-#    @post = Post.find(params[:id])
-#    if @current_user
-#      return true if session[:user_id] == @post.user_id 
-#      redirect_to posts_path and return false
-#    else
-#      false
-#    end
-#  end
+  def post_creator?
+    @post = Post.find(params[:id])
+    if @current_user
+      return true if session[:user_id] == @post.user_id 
+      redirect_to posts_path and return false
+    else
+       false
+     end
+  end
 
 end

@@ -28,13 +28,4 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_path and return false
   end
 
-  def creator(instance, model)
-    instance = model.find(params[:id])
-    if @current_user
-      return true if session[:user_id] == instance.user_id 
-      redirect_to posts_path and return false
-    else
-      false
-    end
-  end
 end
