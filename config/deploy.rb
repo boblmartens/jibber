@@ -3,7 +3,7 @@ set :application, "jibber"
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
 # via the :deploy_to variable:
-set :deploy_to, "/home/bob/public_html/#{application}"
+set :deploy_to, "/home/bob/app/#{application}"
 
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:
@@ -31,7 +31,7 @@ end
 
 desc "Link to database"
 task :link_db do
-  run "ln -s /home/bob/db/production.sqlite3 /home/bob/public_html/jibber/current/db/production.sqlite3"
+  run "ln -s /home/bob/app/jibber/db/production.sqlite3 /home/bob/app/jibber/current/db/production.sqlite3"
 end
 
 after "deploy", "link_db"
