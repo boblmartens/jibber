@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
-
+  
   protected
 
   def fetch_logged_in_user
@@ -26,12 +26,6 @@ class ApplicationController < ActionController::Base
     return true if logged_in?
     session[:return_to] = request.request_uri
     redirect_to new_session_path and return false
-  end
-
-  def creator(instance, model)
-    instance = model.find(params[:id])
-    return true if session[:user_id] == instance.user_id 
-    redirect_to posts_path and return false
   end
 
 end
