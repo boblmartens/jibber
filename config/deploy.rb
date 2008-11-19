@@ -34,6 +34,12 @@ task :link_db do
   run "ln -s /home/bob/apps/jibber/db/production.sqlite3 /home/bob/apps/jibber/current/db/production.sqlite3"
 end
 
+desc "Link to log files"
+task :link_logs do
+  run "ln -s /home/bob/apps/jibber/log/production.log /home/bob/apps/jibber/current/log/production.log"
+end
+
 after "deploy", "link_db"
+after "deploy", "link_logs"
 after "deploy", "deploy:cleanup"
 after "deploy", "deploy:migrate"
