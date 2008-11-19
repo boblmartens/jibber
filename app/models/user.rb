@@ -1,6 +1,9 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
+  has_many :posts
+  has_many :comments
+
   attr_accessor :password
 
   # receives password input from form and runs through to hash password and create salt

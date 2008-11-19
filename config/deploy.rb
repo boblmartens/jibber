@@ -31,7 +31,7 @@ end
 
 desc "Link to database"
 task :link_db do
-  run "ln -s /home/bob/app/jibber/db/production.sqlite3 /home/bob/app/jibber/current/db/production.sqlite3"
+  run "ln -s /home/bob/apps/jibber/db/production.sqlite3 /home/bob/apps/jibber/current/db/production.sqlite3"
 end
 
 after "deploy", "link_db"
