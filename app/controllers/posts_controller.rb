@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_filter :login_required, :except => [ :index, :show ]
-  before_filter :post_owner?, :except => [ :index, :show, :new, :create  ]
+  before_filter :post_owner?, :except => [ :index, :show, :new, :create, :destroy  ]
 
   def index
 		@posts = Post.find :all, :order => 'id DESC'
@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(params[:post])
+    @post.user_id = session[:user_id]
 
 		if @post.save
 			redirect_to posts_path
