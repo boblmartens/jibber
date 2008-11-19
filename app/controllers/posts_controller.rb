@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_filter :login_required, :except => [ :index, :show ]
+  before_filter :post_owner?, :except => [ :index, :show, :new, :create  ]
 
   def index
 		@posts = Post.find :all, :order => 'id DESC'
@@ -42,5 +43,16 @@ class PostsController < ApplicationController
 		@post.destroy
 		redirect_to posts_path
 	end
+
+  protected
+
+  def post_owner?
+    if @current_user
+      return true if session[:user_id] == 6 
+      redirect_to posts_path and return false
+    else
+      false
+    end
+  end
 
 end

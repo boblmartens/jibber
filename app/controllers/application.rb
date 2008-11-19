@@ -27,4 +27,5 @@ class ApplicationController < ActionController::Base
     session[:return_to] = request.request_uri
     redirect_to new_session_path and return false
   end
+
 end
