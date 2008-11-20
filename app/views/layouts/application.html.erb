@@ -9,19 +9,27 @@
 	</head>
 
 	<body>
-		<div id="pageWrapper">
+    <div id="pageWrapper">
+      <div id="loginLogout">
+        <% if @current_user %>
+          Welcome back, <%= @current_user.name %>
+          <em><%= link_to "(Logout)", session_path, :method => :delete %></em>
+        <% else %>
+          <em><%= link_to "Login Now", new_session_path %> or <%= link_to "Register?", new_user_path %></em>
+        <% end %>
+      </div>
 
-    <div id="loginLogout">
-      <% if @current_user %>
-        Welcome back, <%= @current_user.name %>
-        <em><%= link_to "(Logout)", session_path, :method => :delete %></em>
-      <% else %>
-        <em><%= link_to "Login Now", new_session_path %> or <%= link_to "Register?", new_user_path %></em>
-      <% end %>
-    </div>
+			<div id="contentWrapper">
+        <h1><%= link_to "The Jibber Blogging Engine", root_path %></h1>
+			  <%= yield %>
+      </div>
 
-			<h1><%= link_to "The Jibber Blogging Engine", root_path %></h1>
-			<%= yield %>
+      <div id="footerWrapper">
+        <ul>
+          <li><%= link_to "create a new post", new_post_path %></li>
+          <li><%= link_to "list current members", users_path %></li>
+        </ul>
+      </div>
 		</div>
 	</body>
 

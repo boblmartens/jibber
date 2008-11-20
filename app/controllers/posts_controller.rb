@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
   def post_creator
     @post = Post.find(params[:id])
-    return true if session[:user_id] == @post.user_id 
+    return true if @current_user.id == @post.user_id || @current_user.admin? 
     redirect_to posts_path and return false
   end
 

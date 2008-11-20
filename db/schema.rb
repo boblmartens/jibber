@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081119223306) do
+ActiveRecord::Schema.define(:version => 20081120025514) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20081119223306) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_hash"
-    t.boolean  "admin"
+    t.boolean  "admin",         :default => false
   end
 
 end
