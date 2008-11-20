@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :load_post
+  before_filter :comment_creator, :only => [ :edit, :update ]
 
 	def load_post
 		@post = Post.find(params[:post_id])
@@ -58,4 +59,13 @@ class CommentsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  protected
+
+  def comment_creator
+    @comment = @post.comments.find(params[:id])
+    return true if @current_user.id == @comment.user_id || @current_user.admin? 
+    redirect_to posts_path and return false
+  end
+
 end
