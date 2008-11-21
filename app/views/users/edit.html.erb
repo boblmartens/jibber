@@ -18,10 +18,14 @@
     <%= f.text_field :name %>
   </p>
 
+  <% if @current_user.admin? %>
   <p>
     <%= f.label :admin %><br />
     <%= f.check_box :admin %>
   </p>
+  <% else %>
+  <p>Admin: <%= @user.admin %>
+  <% end %>
 
   <p>
     <%= f.submit "Update" %>
