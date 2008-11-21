@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
 
-  # validates_presence_of   :password
+# validates_presence_of   :password
   validates_uniqueness_of :email
 
   attr_accessor :password
