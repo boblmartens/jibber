@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
 
+  validates_presence_of :password
+
   attr_accessor :password
 
   # receives password input from form and runs through to hash password and create salt
