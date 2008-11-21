@@ -78,7 +78,7 @@ class UsersController < ApplicationController
 
   def account_owner
     @user = User.find(params[:id])
-    return true if @current_user.id == @user.id || @current_user.admin? 
+    return true if @current_user.id == @user.id || is_admin 
     redirect_to posts_path and return false
   end
 

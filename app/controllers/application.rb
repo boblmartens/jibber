@@ -28,4 +28,12 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_path and return false
   end
 
+  def is_admin
+    if logged_in?
+      return true if @current_user.admin?
+    else
+      return false
+    end
+  end
+
 end

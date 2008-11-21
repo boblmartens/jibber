@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :load_post
+  before_filter :login_required, :only => [ :edit, :updated, :destroy ]
   before_filter :comment_creator, :only => [ :edit, :update ]
 
 	def load_post
@@ -16,7 +17,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = @post.comments.find(params[:id])
+    # @comment = @post.comments.find(params[:id])
   end
 
   def create
@@ -64,7 +65,7 @@ class CommentsController < ApplicationController
 
   def comment_creator
     @comment = @post.comments.find(params[:id])
-    return true if @current_user.id == @comment.user_id || @current_user.admin? 
+    return true if @current_user.id == @comment.user_id || is_admin 
     redirect_to posts_path and return false
   end
 
