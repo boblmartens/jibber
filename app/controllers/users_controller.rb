@@ -35,6 +35,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @user[:password] = params[:password]
 
     respond_to do |format|
       if @user.save
@@ -50,6 +51,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user[:password] = params[:password] unless params[:password].blank?
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
