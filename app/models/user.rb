@@ -6,8 +6,10 @@ class User < ActiveRecord::Base
 
 # validates_presence_of   :password
   validates_uniqueness_of :email
+  validates_presence_of   :email
+  validates_presence_of   :name
 
-  attr_accessor :password
+  attr_accessor   :password
 
   # receives password input from form and runs through to hash password and create salt
   def password= (pass)
