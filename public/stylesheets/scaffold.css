@@ -52,7 +52,7 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
-.indexPostContainer {
+.postContainer {
 	border: 1px solid #000;
 	padding: 2% 4%;
 	margin: 25px;

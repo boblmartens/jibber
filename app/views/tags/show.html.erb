@@ -1,7 +1,3 @@
 <h2>Stories tagged with <%= params[:id] %></h2>
 
-<% @posts.each do |post| %>
-<div>
-  <h3><%= post.title %></h3>
-</div>
-<% end %>
+<%= render :partial => @posts %>
