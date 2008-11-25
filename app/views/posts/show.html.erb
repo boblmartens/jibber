@@ -2,6 +2,10 @@
 
 <%= markdown @post.body %>
 
+<% unless @post.tag_list.empty? %>
+  <p><strong>Tags:</strong> <%= @post.tag_list %></p>
+<% end %>
+
 <%= error_messages_for :comment %>
 
 <% unless @post.comments.empty? %>
