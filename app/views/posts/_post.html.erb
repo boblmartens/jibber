@@ -1,9 +1,11 @@
 <div class="postContainer">
 	<h3><%= link_to post.title, post %></h3>
-  <h4>Posted by <%= post.user.name %> at <%= post.created_at %></h4>
+  <h4>Posted by <%= link_to post.user.name, user_path(post.user.id) %> at <%= post.created_at %></h4>
   <h5>Tags: <%= render :partial => post.tags %></h5>
+
 	<%= markdown post.body %>
-	<p>This post has <%= post.comments.size %> comment(s) so far.</p>
+	
+  <p>This post has <%= post.comments.size %> comment(s) so far.</p>
 	<p><%= link_to 'edit post', edit_post_path(post) %></p>
-	<p><%= link_to 'delete post', post, :confirm => "Are you sure you want to delete this post?", :method => "delete" %></p>
+	<p><%= link_to 'delete post', post, :confirm => "Really!? This cannot be undone.", :method => "delete" %></p>
 </div>
