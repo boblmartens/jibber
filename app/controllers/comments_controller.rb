@@ -16,10 +16,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  def edit
-    # @comment = @post.comments.find(params[:id])
-  end
-
   def create
     @comment = @post.comments.build(params[:comment])
     @comment.user_id = @current_user.id
@@ -31,21 +27,6 @@ class CommentsController < ApplicationController
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  def update
-    @comment = @post.comments.find(params[:id])
-
-    respond_to do |format|
-      if @comment.update_attributes(params[:comment])
-        flash[:notice] = 'Comment was successfully updated.'
-        format.html { redirect_to([@post]) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
     end
