@@ -1,5 +1,3 @@
-<% for tag in @tags %>
-
-<%= tag_cloud(tag, @css) %>
-
+<% tag_cloud(@tags, @css) do |tag, css| -%>
+  <%= link_to tag, tag_path(:id => tag.name) %>
 <% end %>

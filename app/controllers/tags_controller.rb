@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
   def index
-    @tags = Tag.find(:all)
+    @tags = Post.tag_counts
     @css = ['css1', 'css2']
   end
 
