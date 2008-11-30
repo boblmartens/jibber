@@ -84,7 +84,8 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 #tag-cloud li {
-  padding: 1%;
+  margin: 1%;
+  line-height: 1.5;
   display: inline;
 }
 
