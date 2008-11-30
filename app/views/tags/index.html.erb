@@ -1,3 +1,7 @@
-<% tag_cloud(@tags, @css) do |tag, css| -%>
-  <%= link_to tag, tag_path(:id => tag.name) %>
+<ul id="tag-cloud">
+
+<% tag_cloud(@tags, @levels) do |tag, level| -%>
+  <li class="<%= level %>"><%= link_to tag, tag_path(:id => tag.name) %></li>
 <% end %>
+
+</ul>

@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
   def index
     @tags = Post.tag_counts
-    @css = ['css1', 'css2']
+    @levels = (1 .. 5).map { |i| "level-#{i}" }
   end
 
   def show

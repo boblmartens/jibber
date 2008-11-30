@@ -74,3 +74,38 @@ a:hover { color: #fff; background-color:#000; }
   display: inline;
   padding: 0 5px;
 }
+
+/* tag cloud */
+
+#tag-cloud {
+  list-style: none;
+  display: block;
+  text-align: center;
+}
+
+#tag-cloud li {
+  padding: 1%;
+  display: inline;
+}
+
+/* tag cloud levels */
+
+.level-5 {
+  font-size: xx-large;
+}
+
+.level-4 {
+  font-size: x-large;
+}
+
+.level-3 {
+  font-size: large;
+}
+
+.level-2 {
+  font-size: medium;
+}
+
+.level-1 {
+  font-size: small;
+}
