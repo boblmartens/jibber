@@ -17,7 +17,15 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @post.comments.build(params[:comment])
-    @comment.user_id = @current_user.id
+    
+    if @current_user
+      @comment.user_id = @current_user.id
+      @comment.name = @current_user.name
+      @comment.email = @current_user.email
+      @comment.homepage = @current_user.homepage
+    else
+      false
+    end
 
     respond_to do |format|
       if @comment.save

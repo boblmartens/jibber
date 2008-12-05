@@ -4,6 +4,7 @@
   <tr>
     <th>Email</th>
     <th>Name</th>
+    <th>Homepage</th>
     <th>Admin</th>
   </tr>
 
@@ -11,6 +12,7 @@
   <tr>
     <td><%=h user.email %></td>
     <td><%=h user.name %></td>
+    <td><%=h user.homepage %></td>
     <td><%=h user.admin %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
