@@ -110,3 +110,12 @@ a:hover { color: #fff; background-color:#000; }
 .level-1 {
   font-size: small;
 }
+
+/* notification style */
+
+#notification {
+  border: 5px solid #9c9;
+  background-color: #cfc;
+  padding: 5px;
+  margin: 10px 0;
+}

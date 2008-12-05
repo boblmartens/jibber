@@ -21,6 +21,11 @@
 
 			<div id="contentWrapper">
         <h1><%= link_to "The Jibber Blogging Engine", root_path %></h1>
+        
+        <% unless flash[:notice].blank? %>
+          <div id="notification"><%= flash[:notice] %></div>
+        <% end %>
+
 			  <%= yield %>
       </div>
 
