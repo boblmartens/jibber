@@ -111,11 +111,17 @@ a:hover { color: #fff; background-color:#000; }
   font-size: small;
 }
 
-/* notification style */
+/* flash styles */
 
-#notification {
+#noticeFlash {
   border: 5px solid #9c9;
   background-color: #cfc;
   padding: 5px;
   margin: 10px 0;
 }
+
+#errorFlash {
+  border: 5px solid red;
+  background-color: #cfc;
+  padding: 5px;
+  margin: 10px 0;

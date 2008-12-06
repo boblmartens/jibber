@@ -4,7 +4,7 @@
 
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<title>The Jibber Blogging Engine</title>
+		<title>The Jibber Blogging Engine - Yay!</title>
 		<%= stylesheet_link_tag 'scaffold' %>
 	</head>
 
@@ -23,7 +23,7 @@
         <h1><%= link_to "The Jibber Blogging Engine", root_path %></h1>
         
         <% unless flash[:notice].blank? %>
-          <div id="notification"><%= flash[:notice] %></div>
+          <div id="noticeFlash"><%= flash[:notice] %></div>
         <% end %>
 
 			  <%= yield %>

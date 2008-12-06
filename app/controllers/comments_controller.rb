@@ -33,7 +33,8 @@ class CommentsController < ApplicationController
         format.html { redirect_to(post_path(@post)) }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
-        format.html { render :template => "posts/show", :params => @post }
+        flash[:error] = 'Your comment has been disgarded. Include the required info next time.'
+        format.html { redirect_to(post_path(@post)) }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
     end
