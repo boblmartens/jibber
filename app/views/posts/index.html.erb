@@ -4,3 +4,5 @@
 <% else %>
   <%= render :partial => "post", :collection => @posts %>
 <% end %>
+
+<%= will_paginate @posts %>

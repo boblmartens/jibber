@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   before_filter :post_creator, :only => [ :edit, :update ]
 
   def index
-		@posts = Post.find :all, :order => 'id DESC'
+		# @posts = Post.find :all, :order => 'id DESC'
+    @posts = Post.paginate :page => params[:page], :order => 'created_at DESC', :per_page => '5'
   end
 
 	def show
@@ -42,7 +43,9 @@ class PostsController < ApplicationController
 
 	def destroy
 		@post = Post.find(params[:id])
+    @comments = Post.find(params[:id]).comments
 		@post.destroy
+    @comments.destroy_all
 		redirect_to posts_path
 	end
 
