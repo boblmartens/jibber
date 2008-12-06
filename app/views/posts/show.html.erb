@@ -6,7 +6,12 @@
   <p><strong>Tags:</strong> <%= render :partial => @post.tags %></p>
 <% end %>
 
-<%= render :partial => "comments/comment", :object => @post.comments %>
+<% if !@post.comments.empty? %>
+	<h3>Comments (<%= @post.comments.size %>)</h3>
+  <%= render :partial => "comments/comment", :collection => @post.comments %>
+<% else %>
+  <h3>Comments - THERE ARE NONE!</h3>
+<% end %>
 
 <h3>Join the Discussion</h3>
 <%= render :partial => "comments/comment_form", :object => @comment = Comment.new, :locals => { :button_name => 'post comment' } %>
