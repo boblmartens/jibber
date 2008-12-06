@@ -1,7 +1,11 @@
-<ul id="tag-cloud">
+<% if @tags.size == 0 %>
+  <p>I'm sorry, there are no tags currently. USE THEM!</p>
+<% else %>
+  <ul id="tagCloud">
+  
+  <% tag_cloud(@tags, @levels) do |tag, level| -%>
+    <li class="<%= level %>"><%= link_to tag, tag_path(:id => tag.name) %></li>
+  <% end %>
 
-<% tag_cloud(@tags, @levels) do |tag, level| -%>
-  <li class="<%= level %>"><%= link_to tag, tag_path(:id => tag.name) %></li>
+  </ul>
 <% end %>
-
-</ul>
