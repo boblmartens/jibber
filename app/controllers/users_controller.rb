@@ -52,6 +52,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.password = params[:user][:password] unless params[:user][:password].blank?
+    @user.admin = params[:user][:admin] unless @current_user.admin == params[:user][:admin]
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
