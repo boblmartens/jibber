@@ -1,14 +1,3 @@
 <%= error_messages_for 'post' %>
 
-<% form_for @post do |f| %>
-	<p>title: <%= f.text_field :title %></p>
-
-	<p>
-		body:<br />
-		<%= f.text_area :body %>
-	</p>
-
-  <p>tags: <%= f.text_field :tag_list %></p>
-
-	<p><%= submit_tag 'publish post' %></p>
-<% end %>
+<%= render :partial => "post_form", :locals => { :button_name => "publish post" } %>
