@@ -33,7 +33,9 @@ class CommentsController < ApplicationController
         format.html { redirect_to(post_path(@post)) }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
-        format.html { render :action => "new" }
+        flash[:error] = 'Comment was not created. Make sure you have filled in all applicable fields.'
+        format.html { redirect_to(post_path(@post)) }
+        # format.html { render :controller => "post", :action => "show" }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
     end

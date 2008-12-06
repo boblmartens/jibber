@@ -77,13 +77,13 @@ a:hover { color: #fff; background-color:#000; }
 
 /* tag cloud */
 
-#tag-cloud {
+#tagCloud {
   list-style: none;
   display: block;
   text-align: center;
 }
 
-#tag-cloud li {
+#tagCloud li {
   margin: 1%;
   line-height: 1.5;
   display: inline;
