@@ -18,7 +18,7 @@
 <% end %>
 
 <h3>Join the Discussion</h3>
-<%= render :partial => "comments/add_comment", :object => @comment = Comment.new, :locals => { :button_name => 'post comment' } %>
+<%= render :partial => "comments/comment_form", :object => @comment = Comment.new, :locals => { :button_name => 'post comment' } %>
 
 <%= link_to 'edit post', edit_post_path %> | 
 <%= link_to 'home', posts_path %>
