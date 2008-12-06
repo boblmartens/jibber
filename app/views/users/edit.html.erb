@@ -7,16 +7,12 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </p>
-  
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
+
   </p>
-  
-  <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
+
   <p>
     <%= f.label :homepage %><br />
     <%= f.text_field :homepage %>
@@ -31,6 +27,16 @@
   <p>Admin: <%= @user.admin %>
   <% end %>
 
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+ 
   <p>
     <%= f.submit "Update" %>
   </p>
