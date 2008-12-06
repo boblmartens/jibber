@@ -26,6 +26,10 @@
           <div id="noticeFlash"><%= flash[:notice] %></div>
         <% end %>
 
+        <% unless flash[:error].blank? %>
+          <div id="errorFlash"><%= flash[:error] %></div>
+        <% end %>
+
 			  <%= yield %>
       </div>
 

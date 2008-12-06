@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to(post_path(@post)) }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
-        flash[:error] = 'Your comment has been disgarded. Include the required info next time.'
+        flash[:error] = 'Your comment was not saved because there was no comment body ... DUH!.'
         format.html { redirect_to(post_path(@post)) }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
