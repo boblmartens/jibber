@@ -6,6 +6,12 @@
   <p><strong>Tags:</strong> <%= render :partial => @post.tags %></p>
 <% end %>
 
+<% if @current_user %>
+  <% if @current_user.admin %>
+    <%= link_to 'edit post', edit_post_path %>
+  <% end %>
+<% end %>
+
 <% if !@post.comments.empty? %>
 	<h3>Comments (<%= @post.comments.size %>)</h3>
   <%= render :partial => "comments/comment", :collection => @post.comments %>
@@ -16,5 +22,4 @@
 <h3>Join the Discussion</h3>
 <%= render :partial => "comments/comment_form", :object => @comment = Comment.new, :locals => { :button_name => 'post comment' } %>
 
-<%= link_to 'edit post', edit_post_path %> | 
 <%= link_to 'home', posts_path %>

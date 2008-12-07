@@ -1,26 +1,23 @@
 <h1>Listing users</h1>
 
-<table>
-  <tr>
-    <th>Email</th>
-    <th>Name</th>
-    <th>Homepage</th>
-    <th>Admin</th>
-  </tr>
-
 <% for user in @users %>
-  <tr>
-    <td><%=h user.email %></td>
-    <td><%=h user.name %></td>
-    <td><%=h user.homepage %></td>
-    <td><%=h user.admin %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div class="userIndex">
+    <h4><%= link_to user.name, user %></h4>
+    <ul class="userInfo">
+      <li><%=h user.email %></li>
+      <li>
+        <% if user.admin == true %>
+          <strong>contributor</strong>
+        <% else %>
+          commentator
+        <% end %>
+      </li>
+    </ul>
+
+    <ul class="userAdmin">
+      <li><%= link_to 'edit user', edit_user_path(user)%></li>
+      <li><%= link_to 'destroy user', user, :confirm => 'Are you sure?', :method => :delete %></li>
+    </ul>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New user', new_user_path %>
+<p><%= link_to 'register new account', new_user_path %></p>

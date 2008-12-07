@@ -1,10 +1,11 @@
 <p>
-  <b>Email:</b>
-  <%=h @user.email %>
+  <b>Name:</b>
+  <%=h @user.name %>
 </p>
 
 <p>
-  <b>Password:</b> Your password is hashed in the database.
+  <b>Email:</b>
+  <%=h @user.email %>
 </p>
 
 <p>
@@ -22,6 +23,4 @@
   <%= @user.admin %>
 </p>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
