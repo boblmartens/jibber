@@ -1,6 +1,9 @@
 /* general styling */
 
-body { background-color: #fff; color: #333; }
+body {
+  background-color: #111;
+  color: #f8f2e5;
+}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -14,21 +17,36 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a { color: #831515; }
+a:visited { color: #831515; }
+a:hover { color: #fff; background-color:#333; }
 
 /* wrappers */
 
 #pageWrapper {
-	padding: 20px;
-	margin: 5% 10%;
+	padding: 0 20px 20px;
+	margin: 0 10% 5%;
+  background: #f8f8ff;
+  color: #000;
 }
 
 #contentWrapper {
-  width: 800px;
+  min-width: 700px;
+  max-width: 1100px;
   margin: auto;
 }
+
+/* login/logout styling */
+
+#loginLogout {
+  background: maroon;
+  border: 1px solid #000;
+  padding: 5px;
+  margin: 0;
+}
+
+#loginLogout a {
+  color: 
 
 /* footer styling */
 
