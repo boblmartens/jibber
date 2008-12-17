@@ -9,8 +9,7 @@
   
   <% if @current_user %>
     <% if @current_user.admin %>
-	  <p><%= link_to 'edit post', edit_post_path(post) %></p>
-	  <p><%= link_to 'delete post', post, :confirm => "Really!? This cannot be undone.", :method => "delete" %></p>
+	  <p><%= link_to 'edit post', edit_post_path(post) %> | <%= link_to 'delete post', post, :confirm => "Really!? This cannot be undone.", :method => "delete" %></p>
     <% end %>
   <% end %>
 </div>

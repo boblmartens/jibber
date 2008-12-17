@@ -9,42 +9,44 @@
 	</head>
 
 	<body>
-    <div id="pageWrapper">
+
+    <div id="header">
       <div id="loginLogout">
         <% if @current_user %>
-          Welcome back, <%= @current_user.name %>
-          <em><%= link_to "(Logout)", session_path, :method => :delete %></em>
+          Hey, <%= @current_user.name %> | <%= link_to "Logout", session_path, :method => :delete %>
         <% else %>
-          <em><%= link_to "Login Now", new_session_path %> or <%= link_to "Register?", new_user_path %></em>
+          <%= link_to "Login", new_session_path %> | <%= link_to "Sign up now ...", new_user_path %>
         <% end %>
       </div>
 
-			<div id="contentWrapper">
-        <h1><%= link_to "The Jibber Blogging Engine", root_path %></h1>
-        
-        <% unless flash[:notice].blank? %>
-          <div id="noticeFlash"><%= flash[:notice] %></div>
-        <% end %>
+      <h1><%= link_to "The Jibber Blogging Engine", root_path %></h1>
 
-        <% unless flash[:error].blank? %>
-          <div id="errorFlash"><%= flash[:error] %></div>
-        <% end %>
+      <p>A little Ruby, a lotta Rails and a whole lot more opinion.</p>
+    </div>
 
-			  <%= yield %>
-      </div>
+		<div id="content">
+      <% unless flash[:notice].blank? %>
+        <div id="noticeFlash"><%= flash[:notice] %></div>
+      <% end %>
 
-      <div id="footerWrapper">
-        <ul>
-        <% if @current_user %>
-          <% if @current_user.admin %>
-          <li><%= link_to "create a new post", new_post_path %></li>
-          <% end %>
+      <% unless flash[:error].blank? %>
+        <div id="errorFlash"><%= flash[:error] %></div>
+      <% end %>
+
+			<%= yield %>
+    </div>
+
+    <div id="footer">
+      <ul>
+      <% if @current_user %>
+        <% if @current_user.admin %>
+        <li><%= link_to "create a new post", new_post_path %> | </li>
         <% end %>
-          <li><%= link_to "tag listing", tags_path %></li>
-          <li><%= link_to "list current members", users_path %></li>
-        </ul>
-      </div>
-		</div>
+      <% end %>
+        <li><%= link_to "tag listing", tags_path %> | </li>
+        <li><%= link_to "list current members", users_path %></li>
+      </ul>
+    </div>
 	</body>
 
 </html>
