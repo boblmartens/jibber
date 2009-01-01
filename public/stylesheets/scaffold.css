@@ -79,6 +79,7 @@ a:hover {
 
 #content {
   width: 900px;
+  border: 2px solid black;
   margin: auto;
 }
 
@@ -142,9 +143,7 @@ a:hover {
 /* post styling */
 
 .postContainer {
-	border: 2px solid #000;
-	padding: 25px;
-  margin: 20px 0;
+  padding: 20px;
 }
 
 .postContainer h3 {
