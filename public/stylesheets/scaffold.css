@@ -81,6 +81,7 @@ a:hover {
   width: 900px;
   border: 2px solid black;
   margin: auto;
+  padding: 20px;
 }
 
 /* footer styling */
@@ -143,7 +144,7 @@ a:hover {
 /* post styling */
 
 .postContainer {
-  padding: 20px;
+  padding: 0 0 20px;
 }
 
 .postContainer h3 {
@@ -174,6 +175,11 @@ a:hover {
 }
 
 /* tag cloud */
+
+#tagList h2 {
+  padding: 0 0 20px;
+  font-size: x-large;
+}
 
 #tagCloud {
   list-style: none;

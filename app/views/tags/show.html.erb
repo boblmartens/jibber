@@ -1,3 +1,7 @@
-<h2>Stories tagged with <%= params[:id] %></h2>
+<div id="tagList">
 
-<%= render :partial => @posts %>
+  <h2>Stories tagged with "<%= params[:id] %>"</h2>
+
+  <%= render :partial => @posts %>
+
+</div>
