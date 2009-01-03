@@ -1,29 +1,22 @@
 <% form_for([@post, @comment]) do |f| %>
+  <dl>
 	<% if @current_user %>
-  <p>
-    You are currently logged in as <%= @current_user.name %>
-  </p>
+    <p>You are currently logged in as <%= @current_user.name %></p>
   <% else %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </p>
-
-  <p>
-    <%= f.label :homepage %>
-    <%= f.text_field :homepage %>
-  </p>
+    <dt><%= f.label :name %></dt>
+    <dd><%= f.text_field :name %></dd>
+    
+    <dt><%= f.label :email %></dt>
+    <dd><%= f.text_field :email %></dd>
+    
+    <dt><%= f.label :homepage %></dt>
+    <dd><%= f.text_field :homepage %></dd>
   <% end %>
-  
-  <p>
-		<b>Comment Body | <%= link_to "Markdown formatting  supported", "http://en.wikipedia.org/wiki/Markdown" %></b><br />
-		<%= f.text_area :body %>
-	</p>
+    
+    <dt><b>Comment Body | <%= link_to "Markdown formatting  supported", "http://en.wikipedia.org/wiki/Markdown" %></dt>
+    <dd><%= f.text_area :body %></dd>
+	
+    <p><%= f.submit button_name %></p>
 
-	<p><%= f.submit button_name %></p>
+  </dl>
 <% end %>

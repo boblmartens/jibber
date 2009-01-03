@@ -238,3 +238,14 @@ a:hover {
   padding: 20px;
   margin: 5px 0;
 }
+
+#new_comment label {
+  width: 90px;
+  padding: 10px 0 0;
+  float: left;
+  text-align: center;
+}
+
+#new_comment input {
+  margin: 10px 0 0 ;
+}
