@@ -38,7 +38,8 @@ a:hover {
 /* header styling */
 
 #header {
-  width: 900px;
+  width: 80%;
+  min-width: 600px;
   margin: auto;
   display: block;
   text-align: center;
@@ -78,7 +79,7 @@ a:hover {
 /* content styling */
 
 #content {
-  width: 900px;
+  width: 600px;
   border: 2px solid black;
   margin: auto;
   padding: 20px;
@@ -87,7 +88,7 @@ a:hover {
 /* footer styling */
 
 #footer {
-  width: 900px;
+  width: 600px;
   margin: auto;
 }
 
@@ -234,9 +235,15 @@ a:hover {
 /* comment styling */
 
 .comment {
-  border: 2px solid #666;
+  border: 0px solid #666;
+  background: #f3f3f3;
   padding: 20px;
   margin: 5px 0;
+}
+
+#new_comment {
+  background: #ffd6d6;
+  padding:  0 20px;
 }
 
 #new_comment label {
@@ -248,4 +255,9 @@ a:hover {
 
 #new_comment input {
   margin: 10px 0 0 ;
+}
+
+#comment_body {
+  width: 400px;
+  height: 150px;
 }
