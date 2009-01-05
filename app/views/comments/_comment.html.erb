@@ -1,12 +1,10 @@
 <div class="comment">
-  <p><%= comment.name %> said ...</p>
+  <p><%= comment.commenter_name %> said ...</p>
 	<%= markdown comment.body %>
   <p><%= comment.created_at %></p>
 
   <% if @current_user %>
-    <% unless @current_user.admin %>
-      <p>You do not have permission to delete comments.</p>
-    <% else %>
+    <% if @current_user.admin %>
 	    <%= link_to 'delete comment', [@post, comment], :confirm => 'Do you want to delete this comment?', :method => 'delete' %>
     <% end %>
   <% end %>
