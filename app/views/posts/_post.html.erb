@@ -1,6 +1,6 @@
 <div class="postContainer">
   <h4>
-    Posted by <%= link_to post.user.name, user_path(post.user.id) %> at <%= post.created_at %> | This post has <%= post.comments.size %> comment(s) so far.
+    Posted by <%= post.user.name %> at <%= post.created_at %> | This post has <%= post.comments.size %> comment(s) so far.
 
     <% if @current_user %>
       <% if @current_user.admin %>

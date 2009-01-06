@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :login_required, :except => [ :index, :show, :new, :create ]
-  before_filter :account_owner, :only => [ :edit, :update, :destroy ]
+  before_filter :login_required
 
   def index
     @users = User.find(:all)
@@ -75,13 +74,4 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
-  protected
-
-  def account_owner
-    @user = User.find(params[:id])
-    return true if @current_user.id == @user.id || is_admin 
-    redirect_to posts_path and return false
-  end
-
 end

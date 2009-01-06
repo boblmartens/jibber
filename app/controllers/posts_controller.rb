@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_filter :login_required, :except => [ :index, :show ]
-  before_filter :post_creator, :only => [ :edit, :update ]
 
   def index
 		# @posts = Post.find :all, :order => 'id DESC'
@@ -46,13 +45,4 @@ class PostsController < ApplicationController
 		@post.destroy
 		redirect_to posts_path
 	end
-
-  protected
-
-  def post_creator
-    @post = Post.find(params[:id])
-    return true if @current_user.id == @post.user_id || is_admin 
-    redirect_to posts_path and return false
-  end
-
 end
