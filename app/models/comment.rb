@@ -6,9 +6,13 @@ class Comment < ActiveRecord::Base
 
   def commenter_name 
     if name == ""
-      "A nameless voice"
+      "A Shiftless Shadow"
     else
       name
     end
+  end
+  
+  def pretty_date
+    created_at.strftime("%m.%d.%y")
   end
 end

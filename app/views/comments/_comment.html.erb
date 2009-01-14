@@ -1,7 +1,6 @@
 <div class="comment">
-  <p><%= comment.commenter_name %> said ...</p>
+  <p><%= comment.commenter_name %> | <%= comment.pretty_date %> ...</p>
 	<%= markdown comment.body %>
-  <p><%= comment.created_at %></p>
 
   <% if @current_user %>
     <% if @current_user.admin %>

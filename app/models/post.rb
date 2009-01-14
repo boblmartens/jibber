@@ -8,4 +8,8 @@ class Post < ActiveRecord::Base
 	validates_presence_of :body
   validates_presence_of :tag_list
 
+  def pretty_date
+    created_at.strftime("%b %d, %Y")
+  end
+
 end
