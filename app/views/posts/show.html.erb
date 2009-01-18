@@ -7,9 +7,7 @@
 <% end %>
 
 <% if @current_user %>
-  <% if @current_user.admin %>
-    <%= link_to 'edit post', edit_post_path %>
-  <% end %>
+  <%= link_to 'edit post', edit_post_path %>
 <% end %>
 
 <% if !@post.comments.empty? %>
