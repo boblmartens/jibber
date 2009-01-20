@@ -7,18 +7,9 @@
   <%= image_tag(gravatar_url_for(@post.user.email), { :width => 40, :height => 40 }) %>
 
   <p>
-    <%= @post.user.name %> posted this entry on <%= @post.pretty_date %> and filed it under 
-    <% for tag in @post.tags %>
-      <% if tag != @post.tags.last %>
-        <%= tag.name.to_s + ", " %>
-      <% elsif tag == @post.tags.last %>
-        <% tag.name.to_s + "." %>
-      <% end %>
-    <% end %>
-    
-    <%= render :partial => @post.tags %>. If you want to find more entries, you can check the <%= link_to 'Archive', tags_path %> to find other entries.
+    <%= @post.user.name %> posted this entry on <%= @post.pretty_date %> and filed it under <%= commaed_tags %>. If you want to find more entries, you can check the <%= link_to 'Archive', tags_path %> to find other entries.
     <% if @current_user %>
-      <%= link_to ' Edit post.', edit_post_path %>
+      <%= link_to ' Edit post', edit_post_path %>.
     <% end %>
   </p>
 </div>
