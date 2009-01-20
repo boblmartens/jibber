@@ -1,8 +1,6 @@
 <div class="postContainer">
   <h4>
 
-  <%= image_tag(gravatar_url_for(post.user.email), { :width => 30, :height => 30 })%>
-
     Posted by <%= post.user.name %> on <%= post.pretty_date %> | This post has <%= post.comments.size %> comment(s) so far.
 
     <% if @current_user %>
