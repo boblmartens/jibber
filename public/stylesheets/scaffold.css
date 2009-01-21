@@ -47,6 +47,7 @@ a:hover {
 
 #header h1 {
   padding: 10px;
+  font-size: xx-large;
 }
 
 #header p {
@@ -149,7 +150,7 @@ a:hover {
 }
 
 .postContainer h3 {
-  font-size: large;
+  font-size: x-large;
 }
 
 .postContainer h4 {
@@ -165,6 +166,7 @@ a:hover {
 
 .postContainer h5 {
   color: #999;
+  text-align: center;
 }
 
 .postContainer h5 a {
@@ -259,7 +261,6 @@ a:hover {
 /* comment styling */
 
 .comment {
-  border: 0px solid #666;
   background: #f3f3f3;
   padding: 20px;
   margin: 5px 0;
@@ -284,4 +285,11 @@ a:hover {
 #comment_body {
   width: 400px;
   height: 150px;
+}
+
+.commentGravatar {
+  float: right;
+  border: 1px solid #999;
+  padding: 2px;
+  margin: 10px 0 0;
 }

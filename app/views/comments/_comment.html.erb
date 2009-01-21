@@ -1,5 +1,5 @@
 <div class="comment">
-  <%= image_tag(gravatar_url_for(comment.email), { :width => 35, :height => 35 })%>
+  <%= image_tag(gravatar_url_for(comment.email), { :width => 35, :height => 35, :class => "commentGravatar" })%>
   <p><%= comment.commenter_name %></p>
   <p><%= comment.pretty_date %> ...</p>
 	<%= markdown comment.body %>

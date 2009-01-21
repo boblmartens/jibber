@@ -12,6 +12,6 @@
 
 	<%= markdown post.body %>
 
-  <h5>Tagged as: <%= render :partial => post.tags %></h5>
+  <h5>This post is filed under <%= commaed_tags(@post = post) %>.</h5>
   
 </div>
