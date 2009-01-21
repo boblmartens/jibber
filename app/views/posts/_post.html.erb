@@ -1,17 +1,14 @@
 <div class="postContainer">
+  <h3><%= link_to post.title, post %></h3>
+
+  <%= markdown post.body %>
+
   <h4>
-
     Posted by <%= post.user.name %> on <%= post.pretty_date %> | This post has <%= post.comments.size %> comment(s) so far.
-
     <% if @current_user %>
 	    <span class="adminLinks" > || <%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Delete', post, :confirm => "Really!? This cannot be undone.", :method => "delete" %></span>
     <% end %>
   </h4>
 
-  <h3><%= link_to post.title, post %></h3>
-
-	<%= markdown post.body %>
-
   <h5>This post is filed under <%= commaed_tags(@post = post) %>.</h5>
-  
 </div>

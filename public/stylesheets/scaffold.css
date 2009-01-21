@@ -146,17 +146,20 @@ a:hover {
 /* post styling */
 
 .postContainer {
-  padding: 0 0 20px;
+  padding: 0 0 40px;
 }
 
 .postContainer h3 {
   font-size: x-large;
+  padding: 2px 0;
 }
 
 .postContainer h4 {
   color: #999;
   font-size: x-small;
   font-weight: normal;
+  text-align: center;
+  padding: 5px 0 0;
 }
 
 .postContainer h4 a {
@@ -170,7 +173,7 @@ a:hover {
 }
 
 .postContainer h5 a {
-  color: #666;
+  color: #890009;
 }
 
 .adminLinks {
