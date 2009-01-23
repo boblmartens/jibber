@@ -105,6 +105,11 @@ a:hover {
   padding: 0 5px;
 }
 
+#tagLink {
+  font-size: small;
+  font-weight: bold;
+}
+
 /* validation error styling */
 
 .fieldWithErrors {
@@ -146,11 +151,11 @@ a:hover {
 /* post styling */
 
 .postContainer {
-  padding: 0 0 40px;
+  padding: 0 0 30px;
 }
 
 .postContainer h3 {
-  font-size: x-large;
+  font-size: large;
   padding: 2px 0;
 }
 
