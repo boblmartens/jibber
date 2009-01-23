@@ -5,7 +5,8 @@ class TagsController < ApplicationController
   end
 
   def show
-    @posts = Post.find_tagged_with(params[:id])
+    # This sets the posts and also paginates the output for showing a single tag.
+    @posts = Post.paginate_tagged_with params[:id], :page => params[:page], :order => 'created_at DESC', :per_page => '5'
   end
 
 end

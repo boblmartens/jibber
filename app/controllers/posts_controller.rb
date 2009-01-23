@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :login_required, :except => [ :index, :show ]
 
   def index
-		# @posts = Post.find :all, :order => 'id DESC'
+		# Pagination for all posts, descending by when it is created.
     @posts = Post.paginate :page => params[:page], :order => 'created_at DESC', :per_page => '5'
   end
 
