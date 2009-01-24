@@ -86,6 +86,13 @@ a:hover {
   padding: 20px;
 }
 
+.pagination {
+  text-align: center;
+  font-weight: bold;
+  font-size: x-small;
+  padding: 0 0 20px;
+}
+
 /* footer styling */
 
 #footer {
