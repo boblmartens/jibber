@@ -98,6 +98,7 @@ a:hover {
 #footer {
   width: 600px;
   margin: auto;
+  padding: 5px 0 10px;
 }
 
 #footer ul {
@@ -115,6 +116,10 @@ a:hover {
 #tagLink {
   font-size: small;
   font-weight: bold;
+}
+
+#jibberLine {
+  text-align: center;
 }
 
 /* validation error styling */
@@ -279,6 +284,11 @@ a:hover {
   background: #f3f3f3;
   padding: 20px;
   margin: 5px 0;
+}
+
+#comment_body_title {
+  padding: 10px 0 0;
+  font-weight: bold;
 }
 
 #new_comment {
