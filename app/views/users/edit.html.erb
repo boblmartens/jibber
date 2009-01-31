@@ -18,15 +18,6 @@
     <%= f.text_field :homepage %>
   </p>
 
-  <% if @current_user.admin? %>
-  <p>
-    <%= f.label :admin %><br />
-    <%= f.check_box :admin %>
-  </p>
-  <% else %>
-  <p>Admin: <%= @user.admin %>
-  <% end %>
-
   <p>
     <%= f.label :password %><br />
     <%= f.password_field :password %>
