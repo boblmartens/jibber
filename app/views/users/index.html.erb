@@ -1,23 +1,7 @@
 <h1>Listing users</h1>
 
-<% for user in @users %>
-  <div class="userIndex">
-    <h4><%= link_to user.name, user %></h4>
-    <ul class="userInfo">
-      <li><%=h user.email %></li>
-      <li>
-        <% if user.admin == true %>
-          <strong>contributor</strong>
-        <% else %>
-          commentator
-        <% end %>
-      </li>
-    </ul>
-
-    <ul class="userAdmin">
-      <li><%= link_to 'edit user', edit_user_path(user)%></li>
-      <li><%= link_to 'destroy user', user, :confirm => 'Are you sure?', :method => :delete %></li>
-    </ul>
-<% end %>
+<div id="userListing">
+  <%= render :partial => "user", :collection => @users %>
+</div>
 
 <p><%= link_to 'register new account', new_user_path %></p>

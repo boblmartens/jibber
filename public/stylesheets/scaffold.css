@@ -240,6 +240,24 @@ a:hover {
   display: inline;
 }
 
+/* contributor listing styling */
+
+#userListing {
+  padding: 20px 0 0;
+  text-align: center;
+}
+
+.user h4 {
+  font-size: medium;
+  line-height: 0;
+  padding: 10px 0 2px;
+}
+
+.user p {
+  font-size: x-small;
+  padding: 5px 0 20px;
+}
+
 /* tag cloud levels */
 
 .level-5 {

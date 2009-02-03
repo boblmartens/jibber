@@ -1,0 +1,5 @@
+<div class="user">
+  <%= image_tag(gravatar_url_for(user.email), { :width => 80, :height => 80 }) %>
+  <h4><%= link_to user.name, user %></h4>
+  <p><%= link_to 'edit user', edit_user_path(user) %> | <%= link_to 'destroy user', user, :confirm => 'Are you sure?', :method => :delete %></p>
+</div>
