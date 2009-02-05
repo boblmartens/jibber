@@ -3,8 +3,8 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   should_have_many :posts
   should_have_many :comments
-  should_require_attributes :email, :name
-  should_require_unique_attributes :email
+  should_validate_presence_of :email, :name
+  should_validate_uniqueness_of :email
 
   context "creating a new user" do
     setup do
