@@ -6,7 +6,7 @@ log/*
 tmp/**/*
 
 # do not include the production database
-database/production.sqlite3
+db/production.sqlite3
 
 # any swap files from vim
 *.swp

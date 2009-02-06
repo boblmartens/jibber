@@ -7,6 +7,8 @@ class Comment < ActiveRecord::Base
   def commenter_name 
     if name == ""
       "A Shiftless Shadow"
+    elsif name == nil
+      "A Shiftless Shadow"
     else
       name
     end
