@@ -36,4 +36,4 @@ end
 
 after "deploy", "link_db"
 after "deploy", "deploy:cleanup"
- after "deploy", "deploy:migrate"
+#after "deploy", "deploy:migrate"
